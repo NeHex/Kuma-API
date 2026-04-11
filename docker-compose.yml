@@ -1,0 +1,7 @@
+services:
+  kuma-api:
+    build: .
+    container_name: kuma-api
+    ports:
+      - "7788:7788"
+    restart: unless-stopped
