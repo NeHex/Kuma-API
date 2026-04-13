@@ -25,7 +25,8 @@ struct TmdbData {
 pub async fn tmdb_movie(Path(id): Path<String>) -> Result<Json<TmdbResponse>, ApiError> {
     let target_url = format!("https://www.themoviedb.org/movie/{id}");
 
-    let client = browser_client().map_err(|e| bad_gateway(format!("failed to build http client: {e}")))?;
+    let client =
+        browser_client().map_err(|e| bad_gateway(format!("failed to build http client: {e}")))?;
     let html = with_browser_headers(client.get(&target_url))
         .send()
         .await
@@ -34,7 +35,8 @@ pub async fn tmdb_movie(Path(id): Path<String>) -> Result<Json<TmdbResponse>, Ap
         .await
         .map_err(|e| bad_gateway(format!("failed to read tmdb html: {e}")))?;
 
-    let tmdb = extract_tmdb_data(&html, &id).ok_or_else(|| not_found("cannot parse tmdb fields from html"))?;
+    let tmdb = extract_tmdb_data(&html, &id)
+        .ok_or_else(|| not_found("cannot parse tmdb fields from html"))?;
 
     Ok(Json(TmdbResponse { tmdb }))
 }
@@ -42,8 +44,10 @@ pub async fn tmdb_movie(Path(id): Path<String>) -> Result<Json<TmdbResponse>, Ap
 fn extract_tmdb_data(html: &str, id: &str) -> Option<TmdbData> {
     let document = Html::parse_document(html);
 
-    let cover_raw = extract_attr_by_selector(&document, "img.poster.w-full", &["src", "data-src"]) 
-        .or_else(|| extract_attr_by_selector(&document, ".poster.w-full img", &["src", "data-src"]))?;
+    let cover_raw = extract_attr_by_selector(&document, "img.poster.w-full", &["src", "data-src"])
+        .or_else(|| {
+            extract_attr_by_selector(&document, ".poster.w-full img", &["src", "data-src"])
+        })?;
 
     let title = extract_text_by_selector(&document, "div.title.ott_false h2 a")?;
     let years = extract_text_by_selector(&document, "span.tag.release_date").unwrap_or_default();

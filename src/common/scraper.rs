@@ -1,7 +1,11 @@
 use reqwest::Url;
 use scraper::{Html, Selector};
 
-pub fn extract_attr_by_selector(document: &Html, css_selector: &str, attrs: &[&str]) -> Option<String> {
+pub fn extract_attr_by_selector(
+    document: &Html,
+    css_selector: &str,
+    attrs: &[&str],
+) -> Option<String> {
     let selector = Selector::parse(css_selector).ok()?;
     let element = document.select(&selector).next()?;
 
@@ -13,7 +17,11 @@ pub fn extract_attr_by_selector(document: &Html, css_selector: &str, attrs: &[&s
 
 pub fn extract_text_by_selector(document: &Html, css_selector: &str) -> Option<String> {
     let selector = Selector::parse(css_selector).ok()?;
-    let text = document.select(&selector).next()?.text().collect::<String>();
+    let text = document
+        .select(&selector)
+        .next()?
+        .text()
+        .collect::<String>();
     let normalized = normalize_whitespace(&text);
 
     if normalized.is_empty() {

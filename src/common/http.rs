@@ -11,6 +11,14 @@ pub fn browser_client() -> Result<Client, reqwest::Error> {
         .build()
 }
 
+pub fn browser_client_no_redirect() -> Result<Client, reqwest::Error> {
+    Client::builder()
+        .redirect(reqwest::redirect::Policy::none())
+        .cookie_store(true)
+        .user_agent(BROWSER_UA)
+        .build()
+}
+
 pub fn with_browser_headers(builder: RequestBuilder) -> RequestBuilder {
     builder
         .header(

@@ -6,7 +6,9 @@ use sha2::{Digest, Sha512};
 use crate::common::{
     error::{bad_gateway, not_found, ApiError},
     http::{browser_client, with_browser_headers},
-    scraper::{absolutize_url, extract_attr_by_selector, extract_input_value, extract_text_by_selector},
+    scraper::{
+        absolutize_url, extract_attr_by_selector, extract_input_value, extract_text_by_selector,
+    },
 };
 
 #[derive(Serialize)]
@@ -34,7 +36,8 @@ struct DoubanChallenge {
 pub async fn douban_subject(Path(id): Path<String>) -> Result<Json<DoubanResponse>, ApiError> {
     let target_url = format!("https://movie.douban.com/subject/{id}/");
 
-    let client = browser_client().map_err(|e| bad_gateway(format!("failed to build http client: {e}")))?;
+    let client =
+        browser_client().map_err(|e| bad_gateway(format!("failed to build http client: {e}")))?;
     let first_response = with_browser_headers(client.get(&target_url))
         .send()
         .await
@@ -104,10 +107,10 @@ fn extract_douban_data(html: &str, id: &str) -> Option<DoubanData> {
     let cover_raw = extract_attr_by_selector(&document, "a.nbgnbg img", &["src", "data-src"])?;
     let title = extract_text_by_selector(&document, r#"span[property="v:itemreviewed"]"#)?;
     let years = extract_text_by_selector(&document, "span.year").unwrap_or_default();
-    let score = extract_text_by_selector(&document, r#"strong[property="v:average"]"#)
-        .unwrap_or_default();
-    let desc = extract_text_by_selector(&document, r#"span[property="v:summary"]"#)
-        .unwrap_or_default();
+    let score =
+        extract_text_by_selector(&document, r#"strong[property="v:average"]"#).unwrap_or_default();
+    let desc =
+        extract_text_by_selector(&document, r#"span[property="v:summary"]"#).unwrap_or_default();
 
     Some(DoubanData {
         cover: absolutize_url("https://movie.douban.com", &cover_raw),

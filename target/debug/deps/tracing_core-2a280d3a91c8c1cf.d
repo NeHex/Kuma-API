@@ -1,0 +1,14 @@
+/home/uegee/dev/nehex-dev/Kuma-API/target/debug/deps/tracing_core-2a280d3a91c8c1cf.d: /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/lib.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/lazy.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/callsite.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/dispatcher.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/event.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/field.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/metadata.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/parent.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/span.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/subscriber.rs
+
+/home/uegee/dev/nehex-dev/Kuma-API/target/debug/deps/libtracing_core-2a280d3a91c8c1cf.rmeta: /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/lib.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/lazy.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/callsite.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/dispatcher.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/event.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/field.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/metadata.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/parent.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/span.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/subscriber.rs
+
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/lib.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/lazy.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/callsite.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/dispatcher.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/event.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/field.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/metadata.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/parent.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/span.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/tracing-core-0.1.36/src/subscriber.rs:

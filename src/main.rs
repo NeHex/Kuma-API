@@ -8,6 +8,7 @@ use std::net::SocketAddr;
 async fn main() {
     let app = Router::new()
         .route("/", get(handlers::root::hello))
+        .route("/163music/{id}", get(handlers::music163::music_163))
         .route("/douban/{id}", get(handlers::douban::douban_subject))
         .route("/tmdb/{id}", get(handlers::tmdb::tmdb_movie))
         .fallback(handlers::root::hello);
